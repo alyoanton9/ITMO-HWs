@@ -1,0 +1,13 @@
+E   -> TE'
+E'  -> +TE' | -TE' | eps
+T   -> FT'
+T'  -> *FT' | /FT' | %FT' | eps
+F   -> n | (E) | -F
+
+
+Rule        FIRST           FOLLOW
+E           n, -, (         $, )
+E'          +, -, eps       $, )
+T           n, -, (         +, -, $, )
+T'          *, /, %, eps    +, -, $, )
+F           n, -, (         *, /, %, +, -, $, )
