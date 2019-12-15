@@ -1,13 +1,13 @@
 E   -> TE'
-E'  -> +TE' | -TE' | eps
+E'  -> +TE' | -TE' | $
 T   -> FT'
-T'  -> *FT' | /FT' | %FT' | eps
+T'  -> *FT' | /FT' | %FT' | $
 F   -> n | (E) | -F
 
 
 Rule        FIRST           FOLLOW
 E           n, -, (         $, )
-E'          +, -, eps       $, )
+E'          +, -, $         $, )
 T           n, -, (         +, -, $, )
-T'          *, /, %, eps    +, -, $, )
+T'          *, /, %, $      +, -, $, )
 F           n, -, (         *, /, %, +, -, $, )
